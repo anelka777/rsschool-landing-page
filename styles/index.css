@@ -131,7 +131,6 @@ header {
     color: var(--color-light);
 }
 
-
 .theme-btn svg {
     width: 18px;
     height: 18px;
@@ -142,7 +141,10 @@ header {
     color: var(--color-bg);
 }
 
-
+/* Луна в тёмной теме */
+[data-theme="dark"] .theme-btn[data-theme="dark"][aria-pressed="true"] {
+    color: var(--color-light);
+}
 
 
 .menu-link {
@@ -312,12 +314,12 @@ h1 {
     font-weight: 600;
     line-height: 75px;
     text-align: center;
-    color: #403F3D;
+    color: var(--color-text);
     margin-top: 100px;
 }
 
 h1 i {
-    color: #B0907A;
+    color: var(--color-accent);
 }
 
 .fav-coffee-slider-container {
@@ -339,7 +341,7 @@ h1 i {
 }
 
 .coffee-title {
-    color:#403F3D;
+    color: var(--color-text);
     font-size: 24px;
     font-weight: 600;
     line-height: 30px;
@@ -354,7 +356,7 @@ h1 i {
 }
 
 .coffee-info p {
-    color:#403F3D;
+    color: var(--color-text);
     font-size: 16px;
     font-weight: 400;
     line-height:24px;
@@ -362,7 +364,7 @@ h1 i {
 }
 
 .coffee-price {
-    color:#403F3D;
+    color: var(--color-text);
     font-size: 24px;
     font-weight: 600;
     line-height: 30px;
@@ -375,8 +377,8 @@ h1 i {
     width: 60px;
     height: 60px;
     border-radius: 100px;
-    border:1px solid #665F55;
-    color: #403F3D;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
     transition: background-color 0.6s;
 }
 
@@ -386,15 +388,13 @@ h1 i {
 }
 
 .circle:hover {
-    background-color: #665F55;
+    background-color: var(--color-surface-dark);
     transition: background-color 0.6s;
 }
 
 .circle-container:hover svg path{
-    stroke: #E1D4C9;
+    stroke: var(--color-light);
 }
-
-
 
 .controls {
     display: flex;
@@ -404,16 +404,23 @@ h1 i {
 }
 
 .control {
-    background-color:#C1B6AD;
+    background-color: #C1B6AD;
     width: 40px;
     height: 4px;
     border-radius: 100px;
 }
 
 .control.active {
-    background-color:#665F55;
+    background-color: var(--color-surface-dark);
 }
 
+[data-theme="dark"] .control {
+    background-color: var(--color-surface-dark);
+}
+
+[data-theme="dark"] .control.active {
+    background-color: #C1B6AD;
+}
 
 /* SECTION =====ABOUT=========================================== */
 
@@ -430,11 +437,11 @@ h1 i {
     line-height: 75px;
     font-weight: 600;
     margin: 0;
-    color: #403F3D;
+    color: var(--color-text);
 }
 
 .about-text-block h2 i {
-    color:#B0907A;
+    color: var(--color-accent);
 }
 
 .image-block {
@@ -519,11 +526,11 @@ h1 i {
     font-weight: 600;
     line-height: 75px;
     margin: 0;
-    color: #403F3D;
+    color: var(--color-text);
 }
 
 .big-text i {
-    color: #B0907A;
+    color: var(--color-accent);
 }
 
 .small-text {
@@ -534,7 +541,7 @@ h1 i {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    color: #403F3D;
+    color: var(--color-text);
     margin: 0;
 }
 
@@ -556,7 +563,7 @@ h1 i {
     width:200px;
     height: 64px;
     gap: 12px;
-    border: 1px solid #665F55;
+    border: 1px solid var(--color-text);
     border-radius: 100px;
     transition: background-color 0.6s;
 }
@@ -569,7 +576,7 @@ h1 i {
 
 .app-store-text,
 .google-play-text {
-    color: #403F3D;
+    color: var(--color-text);
 }
 
 .btn-text-small {
@@ -589,19 +596,39 @@ h1 i {
 
 .app-store-btn:hover,
 .google-play-btn:hover{
-    background-color: #665F55;
+    background-color: var(--color-surface-dark);
     transition: background-color 0.6s;
 }
 
 .app-store-btn:hover path,
 .google-play-btn:hover path {
-    fill: #E1D4C9;
+    fill: var(--color-light);
 }
 
 .app-store-text:hover,
 .google-play-text:hover {
-    color: #E1D4C9;
+    color: var(--color-light);
 }
+
+[data-theme="dark"] .app-store-btn .google-play-text {
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .app-store-btn svg path {
+    fill: var(--color-text);
+}
+
+[data-theme="dark"] .google-play-btn .google-play-text {
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .google-play-btn svg path {
+    fill: var(--color-text);
+}
+
+
+
+
 
 /* FOOTER===== CONTACT US========================================== */
 
