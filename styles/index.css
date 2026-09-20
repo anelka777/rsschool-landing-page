@@ -3,6 +3,7 @@
     --color-text: #403F3D;
     --color-surface-dark: #665F55;
     --color-accent: #B0907A;
+    --color-light: #E1D4C9;
 }
 
 [data-theme="dark"] {
@@ -10,6 +11,7 @@
     --color-text: #EFE6D8;
     --color-surface-dark: #4A3A2E;
     --color-accent: #C9A184;
+    --color-light: #EFE6D8;
 }
 
 
@@ -27,9 +29,10 @@ body {
 
 header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 24px 40px 15px 40px;
-    height: 60px;
+    padding: 24px 40px 15px;
+    min-height: 60px;
 }
 
 .logo {
@@ -52,7 +55,7 @@ header {
 .nav li a {
     text-decoration: none;
     font-size: 16px;
-    color: #403F3D;
+    color: var(--color-text);
     font-weight: 600;
 }
 
@@ -64,7 +67,7 @@ header {
     transform: translateX(-50%) scaleX(0);
     width: 100%;
     height: 2px;
-    background-color: #403f3d;
+    background-color: var(--color-text);
     transition: transform 0.7s ease;
 }
 
@@ -97,14 +100,14 @@ header {
     border-radius: 50%;
     border: none;
     background: none;
-    color: #403F3D;
+    color: var(--color-text);
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .theme-btn:hover {
-    background-color: #665F55;
-    color: #E1D4C9;
+    background-color: var(--color-surface-dark);
+    color: var(--color-light);
 }
 
 
@@ -131,9 +134,37 @@ header {
     text-decoration: none;
 }
 
+.burger {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--color-text);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    transition: background-color 0.3s ease;
+}
+
+.burger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--color-text);
+}
+
+
+
 .menu-word {
     font-size: 16px;
-    color: #403F3D;
+    color: var(--color-text);
     font-weight: 600;
     padding-right: 6px;
     padding-top: 5px;
@@ -149,7 +180,7 @@ header {
     transform: translateX(-50%) scaleX(0);
     width: 130%;
     height: 2px;
-    background-color: #403f3d;
+    background-color: var(--color-text);
     transition: transform 0.7s ease;
 }
 
@@ -674,7 +705,7 @@ h1 i {
    TABLET: 768px - 1023px
 ========================================== */
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1023px) {
 
     /* HEADER */
 
@@ -911,7 +942,7 @@ h1 i {
    MOBILE: 320px - 767px
 ========================================== */
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 
     /* HEADER */
 
@@ -935,6 +966,14 @@ h1 i {
 
     .nav {
         display: none;
+    }
+
+    .menu-link {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
     }
 
     .header-right {
