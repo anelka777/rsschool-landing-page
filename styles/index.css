@@ -670,6 +670,567 @@ h1 i {
 }
 
 
+/* ==========================================
+   TABLET: 768px - 1023px
+========================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* HEADER */
+
+    header {
+        padding: 24px 40px 15px;
+        gap: 20px;
+    }
+
+    .nav ul {
+        gap: 20px;
+    }
+
+    .nav li a {
+        font-size: 14px;
+    }
+
+    .header-right {
+        gap: 12px;
+    }
 
 
+    /* ENJOY */
 
+    .enjoy-box {
+        height: auto;
+        min-height: 600px;
+        margin: 0 40px;
+    }
+
+    .enjoy-box-container {
+        padding: 100px 60px;
+        gap: 40px;
+    }
+
+    .enjoy-big-text h2 {
+        font-size: 56px;
+        line-height: 1.1;
+        max-height: none;
+    }
+
+    .enjoy-small-text {
+        max-height: none;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .enjoy-small-text p {
+        display: inline;
+    }
+
+    .enjoy-small-text p::after {
+        content: " ";
+    }
+
+
+    /* FAVORITE COFFEE */
+
+    #favorite-coffee {
+        padding: 0 40px;
+    }
+
+    h1 {
+        font-size: 48px;
+        line-height: 1.2;
+        margin: 100px 0 40px;
+    }
+
+    .fav-coffee-slider-container {
+        padding: 0;
+        gap: 20px;
+    }
+
+    .fav-coffee {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .fav-coffee img {
+        width: min(100%, 400px);
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: contain;
+    }
+
+    .coffee-info {
+        max-width: 100%;
+    }
+
+    .coffee-info p {
+        display: inline;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .coffee-info p::after {
+        content: " ";
+    }
+
+    .circle {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+    }
+
+
+    /* ABOUT */
+
+    .about-text-block {
+        padding: 100px 40px 0;
+    }
+
+    .about-text-block h2 {
+        font-size: 42px;
+        line-height: 1.2;
+    }
+
+    .image-block {
+        padding: 40px 40px 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .column1,
+    .column2 {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 0;
+        width: 100%;
+    }
+
+    .woman,
+    .coffee-cup,
+    .man,
+    .couple {
+        width: 100%;
+        min-width: 0;
+        height: 400px;
+        flex: 1;
+    }
+
+    .woman img,
+    .coffee-cup img,
+    .man img,
+    .couple img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* MOBILE APP */
+
+    .mobile-app-container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 100px;
+        padding: 0 40px;
+    }
+
+    .offer-box {
+        padding-top: 0;
+    }
+
+    .big-text,
+    .small-text {
+        padding-left: 0;
+    }
+
+    .big-text h2 {
+        font-size: 48px;
+        line-height: 1.2;
+    }
+
+    .small-text {
+        padding-top: 40px;
+    }
+
+    .small-text p {
+        display: inline;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .small-text p::after {
+        content: " ";
+    }
+
+    .buttons-box {
+        padding-left: 0;
+        gap: 20px;
+    }
+
+    .mobile-screens-box {
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobile-screens-box img {
+        width: 100%;
+        max-width: 630px;
+        height: auto;
+    }
+
+
+    /* FOOTER */
+
+    .contacts-container {
+        margin: 100px 40px 40px;
+        padding: 80px 60px;
+        gap: 50px;
+    }
+
+    .offer-box2,
+    .contacts-us-box {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .text p {
+        font-size: 42px;
+        line-height: 1.2;
+    }
+
+    .contacts-us-box {
+        padding: 20px 0 0;
+    }
+}
+
+
+/* ==========================================
+   MOBILE: 320px - 767px
+========================================== */
+
+@media (max-width: 767px) {
+
+    /* HEADER */
+
+    header {
+        height: auto;
+        min-height: 60px;
+        padding: 20px 16px;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo {
+        margin-top: 0;
+        flex-shrink: 0;
+    }
+
+    .logo img {
+        max-width: 100px;
+        height: auto;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .header-right {
+        margin-top: 0;
+        gap: 8px;
+    }
+
+    .theme-toggle {
+        gap: 2px;
+        padding: 2px;
+    }
+
+    .theme-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu-link {
+        padding: 0;
+    }
+
+    .menu-word {
+        font-size: 14px;
+    }
+
+
+    /* ENJOY */
+
+    .enjoy-box {
+        height: auto;
+        min-height: 552px;
+        margin: 0 16px;
+        border-radius: 20px;
+        background-position: center;
+    }
+
+    .enjoy-box-container {
+        padding: 60px 16px;
+        gap: 40px;
+    }
+
+    .enjoy-big-text h2 {
+        font-size: clamp(32px, 8vw, 42px);
+        line-height: 1.1;
+        max-height: none;
+    }
+
+    .enjoy-small-text {
+        max-height: none;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .enjoy-small-text p {
+        display: inline;
+    }
+
+    .enjoy-small-text p::after {
+        content: " ";
+    }
+
+    .enjoy-btn {
+        width: 100%;
+        max-width: none;
+        height: 56px;
+    }
+
+    .enjoy-btn:hover .menu {
+        margin-left: 0;
+    }
+
+    .enjoy-btn-hover {
+        display: none;
+    }
+
+
+    /* FAVORITE COFFEE */
+
+    #favorite-coffee {
+        padding: 0 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+        line-height: 1.25;
+        margin: 100px 0 40px;
+    }
+
+    .fav-coffee-slider-container {
+        padding: 0;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .fav-coffee {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .fav-coffee img {
+        width: 100%;
+        max-width: 348px;
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: contain;
+    }
+
+    .coffee-title {
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .coffee-info {
+        padding-top: 16px;
+        max-width: 100%;
+    }
+
+    .coffee-info p {
+        display: inline;
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .coffee-info p::after {
+        content: " ";
+    }
+
+    .coffee-price {
+        padding-top: 16px;
+    }
+
+    .circle-container {
+        display: none;
+    }
+
+    .controls {
+        padding-top: 40px;
+    }
+
+
+    /* ABOUT */
+
+    .about-text-block {
+        padding: 100px 16px 0;
+    }
+
+    .about-text-block h2 {
+        font-size: 32px;
+        line-height: 1.25;
+    }
+
+    .image-block {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 16px 100px;
+    }
+
+    .column1,
+    .column2 {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .woman,
+    .coffee-cup,
+    .man,
+    .couple {
+        width: 100%;
+        height: 590px;
+        max-height: 590px;
+    }
+
+    .woman img,
+    .coffee-cup img,
+    .man img,
+    .couple img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .woman img:hover,
+    .coffee-cup img:hover,
+    .man img:hover,
+    .couple img:hover {
+        transform: none;
+    }
+
+
+    /* MOBILE APP */
+
+    .mobile-app-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 40px;
+        padding: 0 16px;
+    }
+
+    .offer-box {
+        padding-top: 0;
+    }
+
+    .big-text,
+    .small-text {
+        padding-left: 0;
+    }
+
+    .big-text h2 {
+        font-size: 32px;
+        line-height: 1.25;
+    }
+
+    .small-text {
+        padding-top: 40px;
+    }
+
+    .small-text p {
+        display: inline;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .small-text p::after {
+        content: " ";
+    }
+
+    .buttons-box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 0 0;
+    }
+
+    .app-store-btn,
+    .google-play-btn {
+        width: 200px;
+        flex-shrink: 0;
+    }
+
+    .mobile-screens-box {
+        padding: 0;
+        width: 100%;
+    }
+
+    .mobile-screens-box img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+
+    /* FOOTER */
+
+    .contacts-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 100px 16px 40px;
+        padding: 60px 16px;
+        border-radius: 40px;
+    }
+
+    .offer-box2 {
+        width: 100%;
+    }
+
+    .text p {
+        font-size: 32px;
+        line-height: 1.25;
+    }
+
+    .social {
+        padding-top: 40px;
+    }
+
+    .contacts-us-box {
+        padding: 0;
+        gap: 40px;
+        width: 100%;
+    }
+
+    .contact-info {
+        gap: 20px;
+    }
+
+    .address p,
+    .phone p,
+    .hours p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
