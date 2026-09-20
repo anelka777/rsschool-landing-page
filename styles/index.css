@@ -40,6 +40,23 @@ header {
     cursor: pointer;
 }
 
+.logo-img {
+    display: block;
+    width: 100px;
+    height: 60px;
+}
+
+.logo-dark {
+    display: none;
+}
+
+[data-theme="dark"] .logo-light {
+    display: none;
+}
+
+[data-theme="dark"] .logo-dark {
+    display: block;
+}
 
 
 .nav ul {
@@ -193,6 +210,11 @@ header {
 }
 
 
+.coffee-img {
+    color: var(--color-text);
+
+}
+
 
 /* SECTION ===== ENJOY =========================================== */
 
@@ -243,8 +265,8 @@ header {
     max-width: 198px;
     height: 64px;
     border-radius: 100px;
-    padding-top:1px;
-    background-color: #E1D4C9;
+    padding-top: 1px;
+    background-color: var(--color-light);
     cursor: pointer;
     border: none;
     outline: none;
@@ -254,11 +276,13 @@ header {
     line-height: 24px;
     text-align: center;
     position: relative;
+    text-decoration: none;
+    color: var(--color-text);
 }
 
-.enjoy-btn {
-    text-decoration: none;
-    color: #403F3D;
+[data-theme="dark"] .enjoy-btn {
+    background-color: var(--color-surface-dark);
+    color: var(--color-light);
 }
 
 .enjoy-btn-hover {
