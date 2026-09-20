@@ -105,6 +105,10 @@ header {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.theme-btn[data-theme="dark"] {
+    color: #403F3D;
+}
+
 .theme-btn:hover {
     background-color: var(--color-surface-dark);
     color: var(--color-light);
