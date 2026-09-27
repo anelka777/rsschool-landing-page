@@ -1,5 +1,6 @@
 let allProducts = [];
 let currentCategory = 'coffee';
+let showAllCards = false;
 
 function createCardHTML(product) {
     return `
@@ -28,7 +29,6 @@ function renderCards(products) {
         return;
     }
 
-
     const half = Math.ceil(products.length / 2);
     const firstHalf = products.slice(0, half);
     const secondHalf = products.slice(half);
@@ -37,10 +37,37 @@ function renderCards(products) {
     rowGroup2.innerHTML = secondHalf.map(createCardHTML).join('');
 }
 
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+function updateCardsVisibility() {
+    const cards = document.querySelectorAll('#rowGroup1 .item-box, #rowGroup2 .item-box');
+    const btnBox = document.querySelector('.refresh-btn-box');
+
+    if (!isMobile() || cards.length <= 4) {
+        cards.forEach(card => card.classList.remove('hidden-card'));
+        btnBox.style.display = 'none';
+        return;
+    }
+
+    cards.forEach((card, index) => {
+        if (index < 4 || showAllCards) {
+            card.classList.remove('hidden-card');
+        } else {
+            card.classList.add('hidden-card');
+        }
+    });
+
+    btnBox.style.display = showAllCards ? 'none' : 'flex';
+}
+
 function showCategory(category) {
     currentCategory = category;
+    showAllCards = false;
     const filtered = allProducts.filter(p => p.category === category);
     renderCards(filtered);
+    updateCardsVisibility();
 }
 
 function initTabs() {
@@ -65,11 +92,23 @@ function initTabs() {
     });
 }
 
+function initShowMoreButton() {
+    const refreshBtn = document.querySelector('.refresh-btn');
+
+    refreshBtn.addEventListener('click', () => {
+        showAllCards = true;
+        updateCardsVisibility();
+    });
+}
+
+window.addEventListener('resize', updateCardsVisibility);
+
 fetch('./products.json')
     .then(response => response.json())
     .then(data => {
         allProducts = data;
         initTabs();
+        initShowMoreButton();
         showCategory('coffee');
     })
     .catch(error => console.error('Failed to load products:', error));
