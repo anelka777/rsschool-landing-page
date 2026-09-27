@@ -144,7 +144,6 @@ header {
     color: var(--color-bg);
 }
 
-/* Луна в тёмной теме */
 [data-theme="dark"] .theme-btn[data-theme="dark"][aria-pressed="true"] {
     color: var(--color-light);
 }
@@ -158,6 +157,27 @@ header {
 
 .menu-link-btn {
     text-decoration: none;
+}
+
+.disable-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.burger span {
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.open .burger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.open .burger span:nth-child(2) {
+    opacity: 0;
+}
+
+.open .burger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 .burger {
@@ -312,6 +332,7 @@ header {
 }
 
 /* SECTION ===== FAVOURITES =========================================== */
+
 h1 {
     font-size: 60px;
     font-weight: 600;
@@ -630,9 +651,6 @@ h1 i {
 }
 
 
-
-
-
 /* FOOTER===== CONTACT US========================================== */
 
 .contacts-container {
@@ -756,6 +774,58 @@ h1 i {
 
 .social-icon:hover path {
     stroke:#403F3D;
+}
+
+/* ==========================================
+   SMALL DESKTOP: 1024px - 1439px
+========================================== */
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+    .image-block {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        padding: 40px 20px 100px;
+    }
+
+    .column1,
+    .column2 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+        min-width: 0;
+        padding: 0;
+    }
+
+    .woman,
+    .coffee-cup,
+    .man,
+    .couple {
+        width: 100%;
+        height: auto;
+    }
+
+    .woman,
+    .couple {
+        aspect-ratio: 660 / 590;
+    }
+
+    .coffee-cup,
+    .man {
+        aspect-ratio: 660 / 430;
+    }
+
+    .woman img,
+    .coffee-cup img,
+    .man img,
+    .couple img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 
@@ -883,32 +953,32 @@ h1 i {
     .image-block {
         padding: 40px 40px 100px;
         display: flex;
-        flex-direction: column;
-        gap: 40px;
+        justify-content: center;
+        gap: 20px;
     }
 
     .column1,
     .column2 {
         display: flex;
-        flex-direction: row;
-        gap: 20px;
         padding: 0;
-        width: 100%;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .coffee-cup,
+    .man {
+        display: none;
     }
 
     .woman,
-    .coffee-cup,
-    .man,
     .couple {
         width: 100%;
-        min-width: 0;
-        height: 400px;
-        flex: 1;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        flex: none;
     }
 
     .woman img,
-    .coffee-cup img,
-    .man img,
     .couple img {
         width: 100%;
         height: 100%;
@@ -997,12 +1067,10 @@ h1 i {
 
 
 /* ==========================================
-   MOBILE: 320px - 767px
+   MOBILE STRUCTURE: up to 768px
 ========================================== */
 
-@media (max-width: 768px) {
-
-    /* HEADER */
+@media screen and (max-width: 768px) {
 
     header {
         height: auto;
@@ -1023,7 +1091,32 @@ h1 i {
     }
 
     .nav {
-        display: none;
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-bg);
+        transition: right 0.5s ease;
+        z-index: 10;
+    }
+
+    .open .nav {
+        right: 0;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .nav li a {
+        font-size: 28px;
     }
 
     .menu-link {
@@ -1032,6 +1125,8 @@ h1 i {
 
     .burger {
         display: flex;
+        position: relative;
+        z-index: 11;
     }
 
     .header-right {
@@ -1049,285 +1144,218 @@ h1 i {
         height: 30px;
     }
 
-    .menu-link {
-        padding: 0;
-    }
-
     .menu-word {
         font-size: 14px;
     }
 
-
-    /* ENJOY */
-
-    .enjoy-box {
-        height: auto;
-        min-height: 552px;
-        margin: 0 16px;
-        border-radius: 20px;
-        background-position: center;
-    }
-
     .enjoy-box-container {
-        padding: 60px 16px;
-        gap: 40px;
-    }
-
-    .enjoy-big-text h2 {
-        font-size: clamp(32px, 8vw, 42px);
-        line-height: 1.1;
-        max-height: none;
-    }
-
-    .enjoy-small-text {
-        max-height: none;
-        font-size: 12px;
-        line-height: 18px;
-    }
-
-    .enjoy-small-text p {
-        display: inline;
-    }
-
-    .enjoy-small-text p::after {
-        content: " ";
-    }
-
-    .enjoy-btn {
-        width: 100%;
-        max-width: none;
-        height: 56px;
-    }
-
-    .enjoy-btn:hover .menu {
-        margin-left: 0;
+        padding-left: 60px;
     }
 
     .enjoy-btn-hover {
-        display: none;
+        display: inline-block;
     }
 
-
-    /* FAVORITE COFFEE */
-
-    #favorite-coffee {
-        padding: 0 16px;
+    .enjoy-btn:hover .menu {
+        transition: none;
+        margin-left: -27px;
     }
 
-    h1 {
-        font-size: 32px;
-        line-height: 1.25;
-        margin: 100px 0 40px;
-    }
-
-    .fav-coffee-slider-container {
-        padding: 0;
-        justify-content: center;
-        gap: 0;
-    }
-
-    .fav-coffee {
-        width: 100%;
-        min-width: 0;
-    }
-
-    .fav-coffee img {
-        width: 100%;
-        max-width: 348px;
-        height: auto;
-        aspect-ratio: 1;
-        object-fit: contain;
-    }
-
-    .coffee-title {
-        font-size: 24px;
-        line-height: 30px;
-        text-align: center;
-    }
-
-    .coffee-info {
-        padding-top: 16px;
-        max-width: 100%;
-    }
-
-    .coffee-info p {
-        display: inline;
-        font-size: 14px;
-        line-height: 21px;
-    }
-
-    .coffee-info p::after {
-        content: " ";
-    }
-
-    .coffee-price {
-        padding-top: 16px;
-    }
-
-    .circle-container {
-        display: none;
-    }
-
-    .controls {
-        padding-top: 40px;
-    }
-
-
-    /* ABOUT */
 
     .about-text-block {
-        padding: 100px 16px 0;
+        padding-right: 40px;
     }
 
-    .about-text-block h2 {
-        font-size: 32px;
-        line-height: 1.25;
-    }
-
-    .image-block {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        padding: 40px 16px 100px;
-    }
-
-    .column1,
-    .column2 {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        width: 100%;
-        padding: 0;
+    .coffee-cup,
+    .man {
+        display: none;
     }
 
     .woman,
-    .coffee-cup,
-    .man,
     .couple {
-        width: 100%;
-        height: 590px;
-        max-height: 590px;
+        width: 688px;
     }
 
-    .woman img,
-    .coffee-cup img,
-    .man img,
-    .couple img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .couple {
+        margin-top: 40px;
     }
 
-    .woman img:hover,
-    .coffee-cup img:hover,
-    .man img:hover,
-    .couple img:hover {
-        transform: none;
-    }
-
-
-    /* MOBILE APP */
 
     .mobile-app-container {
-        display: flex;
+        padding-left: 40px;
         flex-direction: column;
-        flex-wrap: nowrap;
-        gap: 40px;
-        padding: 0 16px;
     }
 
     .offer-box {
         padding-top: 0;
+        flex-wrap: wrap;
     }
 
     .big-text,
     .small-text {
         padding-left: 0;
+        padding-right: 20px;
+    }
+
+    .buttons-box {
+        padding-left: 0;
+    }
+
+    .mobile-screens-box {
+        padding-top: 5px;
+        padding-left: 30px;
+    }
+
+
+    .contacts-container {
+        flex-wrap: wrap;
+        margin: 100px 40px 40px 40px;
+        padding: 100px 60px 60px 60px;
+        gap: 70px;
+    }
+
+    .contacts-us-box {
+        padding-left: 0;
+        padding-bottom: 45px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE SIZES: 380px - 767px
+========================================== */
+
+@media screen and (min-width: 380px) and (max-width: 767px) {
+
+    header {
+        padding: 20px;
+    }
+
+    /* ENJOY */
+
+    .enjoy-big-text h2 {
+        font-size: 42px;
+        line-height: 48.3px;
+    }
+
+    .enjoy-box {
+        height: 554px;
+        margin: 0 15px;
+    }
+
+    .enjoy-box-container {
+        padding: 60px 15px 20px 20px;
+        gap: 40px;
+    }
+
+    .enjoy-small-text {
+        margin-bottom: 70px;
+    }
+
+    /* FAVORITE COFFEE */
+
+    h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .circle {
+        display: none;
+    }
+
+    .fav-coffee-slider-container {
+        justify-content: center;
+        padding: 20px 15px;
+        gap: 10px;
+    }
+
+    .fav-coffee img {
+        width: 348px;
+        height: 348px;
+    }
+
+    .controls {
+        padding-top: 20px;
+    }
+
+    /* ABOUT */
+
+    .about-text-block {
+        padding-left: 15px;
+        padding-right: 20px;
+        max-width: 348px;
+    }
+
+    .about-text-block h2 {
+        font-size: 32px;
+        line-height: 40px;
+        margin: 0;
+    }
+
+    .image-block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        padding: 40px 15px 60px 15px;
+    }
+
+    .column1,
+    .column2 {
+        padding: 0;
+    }
+
+    .woman,
+    .couple {
+        width: 100%;
+        max-width: 298px;
+        height: 328px;
+        margin: 0 auto;
+    }
+
+    /* MOBILE APP */
+
+    .mobile-app-container {
+        padding-left: 15px;
+        gap: 40px;
+    }
+
+    .offer-box {
+        padding-top: 5px;
+        flex-wrap: wrap;
     }
 
     .big-text h2 {
         font-size: 32px;
-        line-height: 1.25;
-    }
-
-    .small-text {
-        padding-top: 40px;
-    }
-
-    .small-text p {
-        display: inline;
-        font-size: 16px;
-        line-height: 24px;
-    }
-
-    .small-text p::after {
-        content: " ";
-    }
-
-    .buttons-box {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 40px 0 0;
-    }
-
-    .app-store-btn,
-    .google-play-btn {
-        width: 200px;
-        flex-shrink: 0;
+        line-height: 40px;
     }
 
     .mobile-screens-box {
-        padding: 0;
-        width: 100%;
+        padding-top: 0;
+        padding-left: 0;
     }
 
     .mobile-screens-box img {
-        display: block;
-        width: 100%;
-        height: auto;
-        object-fit: contain;
+        max-width: 348px;
     }
-
 
     /* FOOTER */
 
     .contacts-container {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        margin: 100px 16px 40px;
-        padding: 60px 16px;
-        border-radius: 40px;
-    }
-
-    .offer-box2 {
-        width: 100%;
+        flex-wrap: wrap;
+        padding: 60px 15px 18px 15px;
+        margin: 95px 15px 40px 15px;
+        gap: 10px;
     }
 
     .text p {
         font-size: 32px;
-        line-height: 1.25;
-    }
-
-    .social {
-        padding-top: 40px;
+        line-height: 40px;
     }
 
     .contacts-us-box {
-        padding: 0;
         gap: 40px;
-        width: 100%;
-    }
-
-    .contact-info {
-        gap: 20px;
-    }
-
-    .address p,
-    .phone p,
-    .hours p {
-        font-size: 14px;
-        line-height: 22px;
+        margin: 0;
+        padding-left: 0;
     }
 }
