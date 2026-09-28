@@ -362,7 +362,19 @@ h1 i {
     padding: 0 40px;
 }
 
+.fav-slider {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.fav-slider-row {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
 .fav-coffee {
+    flex: 0 0 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -437,23 +449,22 @@ h1 i {
 }
 
 .control {
-    background-color: #C1B6AD;
+    background-color: var(--color-border);
     width: 40px;
     height: 4px;
     border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
 }
 
-.control.active {
+.control_indicator {
+    width: 0%;
+    height: 100%;
+    border-radius: 100px;
     background-color: var(--color-surface-dark);
 }
 
-[data-theme="dark"] .control {
-    background-color: var(--color-surface-dark);
-}
-
-[data-theme="dark"] .control.active {
-    background-color: #C1B6AD;
-}
 
 /* SECTION =====ABOUT=========================================== */
 
@@ -1278,9 +1289,40 @@ h1 i {
         gap: 10px;
     }
 
+    .fav-coffee {
+        width: 100%;
+        max-width: 348px;
+        margin: 0 auto;
+    }
+
     .fav-coffee img {
-        width: 348px;
+        width: 100%;
+        max-width: 348px;
         height: 348px;
+    }
+
+    .coffee-title {
+        font-size: 20px;
+        line-height: 26px;
+        padding-top: 16px;
+        text-align: center;
+    }
+
+    .coffee-info {
+        width: 100%;
+        max-width: 300px;
+        padding-top: 10px;
+        box-sizing: border-box;
+    }
+
+    .coffee-info p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .coffee-price {
+        font-size: 20px;
+        padding-top: 12px;
     }
 
     .controls {
