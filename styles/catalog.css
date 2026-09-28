@@ -516,6 +516,45 @@ body {
         height: 100%;
         object-fit: cover;
     }
+
+    /* MODAL - tablet */
+    .modal-container {
+        max-width: 600px;
+        gap: 16px;
+    }
+
+    .mod-first-colmn {
+        max-width: 220px;
+    }
+
+    .mod-img-box {
+        max-width: 220px;
+    }
+
+    .mod-second-colmn {
+        padding-left: 16px;
+        gap: 16px;
+    }
+
+    .mod-item-name,
+    .mod-total-name,
+    .mod-total-price {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .mod-item-description,
+    .mod-size,
+    .mod-additive {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .mod-size-btn,
+    .mod-additive-btn {
+        height: 40px;
+        padding: 0 12px 0 6px;
+    }
 }
 
 /* MOBILE */
@@ -574,22 +613,74 @@ body {
         padding-bottom: 0;
     }
 /* MODAL =====*/
+
+    .modal {
+        width: calc(100vw - 24px);
+        padding: 12px;
+
+    }
+
     .modal-container {
-        flex-direction: column;
+        width: calc(100% - 24px);
+        max-width: none;
+        padding: 20px;
         border-radius: 24px;
         max-height: 85vh;
     }
 
     .mod-first-colmn {
-        max-width: 100%;
-    }
-
-    .mod-img-box {
-        max-width: 100%;
+        display: none;
     }
 
     .mod-second-colmn {
         padding-left: 0;
-        padding-top: 16px;
+        padding-top: 0;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .mod-item-name {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .mod-item-description {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .mod-size,
+    .mod-additive {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .mod-size-btn,
+    .mod-additive-btn {
+        height: 40px;
+        padding: 0 12px 0 6px;
+    }
+
+    .mod-size-letter,
+    .mod-addit-number {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+    }
+
+    .mod-total-name,
+    .mod-total-price {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .mod-warning-text {
+        font-size: 9px;
+        line-height: 13px;
+    }
+
+    .mod-close-btn {
+        padding: 10px;
+        font-size: 14px;
     }
 }
