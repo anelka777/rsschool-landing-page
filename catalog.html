@@ -102,19 +102,19 @@
                 <h1>Behind each of our cups hides an <i>amazing surprise</i></h1>
             </div>
             <div class="tabs">
-                <div class="coffee-tab btn active">
+                <div class="coffee-tab btn active" data-category="coffee">
                     <div class="circle active">
                         <img src="assets/icons/coffee.png" alt="coffee">
                     </div>
                     <p class="tab-btn-name active">Coffee</p>
                 </div>
-                <div class="tea-tab btn">
+                <div class="tea-tab btn" data-category="tea">
                     <div class="circle">
                         <img src="assets/icons/tea.png" alt="tea">
                     </div>
                     <p class="tab-btn-name">Tea</p>
                 </div>
-                <div class=" dessert-tab btn">
+                <div class="dessert-tab btn" data-category="dessert">
                     <div class="circle">
                         <img src="assets/icons/dessert.png" alt="dessert">
                     </div>
@@ -124,124 +124,20 @@
         </div>
     </section>
     <section id="assortment">
+        <div class="modal">
+            <div class="modal-container"></div>
+        </div>
         <div class="assortment-big-container">
-            <div class="row-group1">
-                <div class="item-box">
-                    <div class="item-img-frame">
-                        <img src="assets/images/coffee-1.jpg" alt="Irish coffee">
-                    </div>
-                    <div class="item-text-block">
-                        <h2 class="item-name">Irish coffee</h2>
-                        <div class="item-description">
-                            <p>Fragrant black coffee with</p>
-                            <p>Jameson Irish whiskey and</p>
-                            <p>whipped milk</p>
-                        </div>
-                        <p class="item-price">$7.00</p>
-                    </div>
-                </div>
-                <div class="item-box">
-                    <div class="item-img-frame">
-                        <img src="assets/images/coffee-2.jpg" alt="Kahlua coffee">
-                    </div>
-                    <div class="item-text-block">
-                        <h2 class="item-name">Kahlua coffee</h2>
-                        <div class="item-description">
-                            <p>Classic coffee with milk and Kahlua</p>
-                            <p>liqueur under a cap of frothed milk</p>
-                        </div>
-                        <p class="item-price">$7.00</p>
-                    </div>
-                </div>
-                <div class="item-box">
-                    <div class="item-img-frame">
-                        <img src="assets/images/coffee-3.jpg" alt="Honey raf">
-                    </div>
-                    <div class="item-text-block">
-                        <h2 class="item-name">Honey raf</h2>
-                        <div class="item-description">
-                            <p>Espresso with frothed milk, cream</p>
-                            <p>and aromatic honey</p>
-                        </div>
-                        <p class="item-price">$5.50</p>
-                    </div>
-                </div>
-                <div class="item-box">
-                    <div class="item-img-frame">
-                        <img src="assets/images/coffee-4.jpg" alt="Ice cappuccino">
-                    </div>
-                    <div class="item-text-block">
-                        <h2 class="item-name">Ice cappuccino</h2>
-                        <div class="item-description">
-                            <p>Cappuccino with soft thick foam in</p>
-                            <p>summer version with ice</p>
-                        </div>
-                        <p class="item-price">$5.00</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row-group2">
-                <div class="item-box">
-                    <div class="item-img-frame">
-                        <img src="assets/images/coffee-5.jpg" alt="Espresso">
-                    </div>
-                    <div class="item-text-block">
-                        <h2 class="item-name">Espresso</h2>
-                        <div class="item-description">
-                            <p>Classic black coffee</p>
-                        </div>
-                        <p class="item-price">$4.50</p>
-                    </div>
-                </div>
-                <div class="item-box">
-                    <div class="item-img-frame">
-                        <img src="assets/images/coffee-6.jpg" alt="Latte">
-                    </div>
-                    <div class="item-text-block">
-                        <h2 class="item-name">Latte</h2>
-                        <div class="item-description">
-                            <p>Espresso coffee with the addition</p>
-                            <p>of steamed milk and dense milk</p>
-                            <p>foam</p>
-                        </div>
-                        <p class="item-price">$5.50</p>
-                    </div>
-                </div>
-                <div class="item-box">
-                    <div class="item-img-frame">
-                        <img src="assets/icons/coffee-7.jpg" alt="Latte macchiato">
-                    </div>
-                    <div class="item-text-block">
-                        <h2 class="item-name">Latte macchiato</h2>
-                        <div class="item-description">
-                            <p>Espresso with frothed milk and</p>
-                            <p>chocolate</p>
-                        </div>
-                        <p class="item-price">$5.50</p>
-                    </div>
-                </div>
-                <div class="item-box">
-                    <div class="item-img-frame">
-                        <img src="assets/images/coffee-8.jpg" alt="Coffee with cognac">
-                    </div>
-                    <div class="item-text-block">
-                        <h2 class="item-name">Coffee with cognac</h2>
-                        <div class="item-description">
-                            <p>Fragrant black coffee with cognac</p>
-                            <p>and whipped cream</p>
-                        </div>
-                        <p class="item-price">$6.50</p>
-                    </div>
-                </div>
-            </div>
+            <div class="row-group1" id="rowGroup1"></div>
+            <div class="row-group2" id="rowGroup2"></div>
         </div>
     </section>
     <div class="refresh-btn-box">
         <div class="refresh-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="refresh">
-                    <path id="Ellipse" d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path id="Ellipse_2" d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path id="Ellipse" d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path id="Ellipse_2" d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
                 </g>
             </svg>
         </div>
@@ -300,5 +196,7 @@
     </div>
 </footer>
 <script src="./scripts/theme.js"></script>
+<script src="./scripts/burger.js"></script>
+<script src="./scripts/catalog.js"></script>
 </body>
 </html>
